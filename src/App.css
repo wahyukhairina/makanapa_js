@@ -2,3 +2,22 @@ div {
   margin: 0;
   padding: 0;
 }
+.container-main{
+  display: flex;
+  flex-direction: column;
+}
+.navbar {
+  flex: 1;
+  background-color: aqua;
+}
+.container-content{
+  display: flex;
+}
+.container-left{
+flex: 2;
+background-color: green;
+}
+.container-right{
+flex: 1;
+background-color: blueviolet;
+}
