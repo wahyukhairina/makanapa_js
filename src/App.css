@@ -2,22 +2,133 @@ div {
   margin: 0;
   padding: 0;
 }
+
 .container-main{
   display: flex;
   flex-direction: column;
 }
+.header-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+}
+.image-header {
+  width: 95%;
+  height: 70%;
+  border-radius: 10px;
+}
+
 .navbar {
   flex: 1;
-  background-color: aqua;
+  background-color: red;
 }
 .container-content{
   display: flex;
 }
 .container-left{
-flex: 2;
-background-color: green;
+flex: 3;
 }
+.product-list{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-food{
+  max-width: 18rem;
+}
+
 .container-right{
 flex: 1;
-background-color: blueviolet;
+display: flex;
+flex-direction: column;
+}
+
+.address{
+  display: flex;
+  background-color: coral;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.myorder{
+  align-self: start;
+}
+.card-address{
+  max-width: 100%;
+  background-color: darkgreen;
+}
+
+.cart{
+  background-color: chocolate;
+}
+
+.container-cart {
+  display: flex;
+  flex-direction: row;
+}
+
+.cart-item {
+  flex: 3;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+}
+
+.cart-image{
+  max-width: 80%;;
+  border-radius: 5%;
+}
+
+.cart-detail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.total-price {
+  display: flex;
+  flex-direction: row;
+}
+
+.total-text{
+  flex: 1;
+}
+
+/* .price-tag{
+  flex: 1;
+} */
+
+.amount{
+  display: flex;
+  flex-direction: row;
+}
+
+.add{
+  flex: 1;
+  background-color: red;
+}
+
+.quantity{
+  flex: 1;
+  background-color: green;
+}
+
+.reduce{
+  flex: 1 ;
+  background-color: yellow;
+}
+
+.price {
+  flex: 3;
+  background-color: aqua;
+  align-items: center;
+}
+
+.total{
+  background-color: cornflowerblue;
+}
+
+.product-list{
+  display: flex;
 }
