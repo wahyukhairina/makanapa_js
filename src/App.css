@@ -1,4 +1,4 @@
-div {
+div, .btn {
   margin: 0;
   padding: 0;
 }
@@ -11,7 +11,32 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aqua;
+}
+
+.form-control.search{
+  width: 80%;
+}
+
+.list{
+max-width: 1000px;
+}
+.menu-item {
+  padding: 0 40px;
+  margin: 5px 10px;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+}
+.menu-item-wrapper.active {
+  border: 1px blue solid;
+}
+.menu-item.active {
+  border: 1px green solid;
+}
+ 
+.scroll-menu-arrow {
+  padding: 20px;
+  cursor: pointer;
 }
 .image-header {
   width: 95%;
@@ -19,9 +44,37 @@ div {
   border-radius: 10px;
 }
 
+.category{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.list-category {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-category{
+  max-width: 5%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+
 .navbar {
   flex: 1;
-  background-color: red;
 }
 .container-content{
   display: flex;
@@ -29,10 +82,15 @@ div {
 .container-left{
 flex: 3;
 }
-.product-list{
+.dropdown{
+  max-width: 2%;
+  display: flex;
+  justify-content: flex-end;
+}
+/* .product-list{
   display: flex;
   justify-content: space-evenly;
-}
+} */
 
 .card-food{
   max-width: 18rem;
@@ -44,9 +102,9 @@ display: flex;
 flex-direction: column;
 }
 
+
 .address{
   display: flex;
-  background-color: coral;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -56,12 +114,8 @@ flex-direction: column;
 }
 .card-address{
   max-width: 100%;
-  background-color: darkgreen;
 }
 
-.cart{
-  background-color: chocolate;
-}
 
 .container-cart {
   display: flex;
@@ -70,7 +124,6 @@ flex-direction: column;
 
 .cart-item {
   flex: 3;
-  background-color: blue;
   display: flex;
   justify-content: center;
 }
@@ -95,10 +148,6 @@ flex-direction: column;
   flex: 1;
 }
 
-/* .price-tag{
-  flex: 1;
-} */
-
 .amount{
   display: flex;
   flex-direction: row;
@@ -106,29 +155,35 @@ flex-direction: column;
 
 .add{
   flex: 1;
-  background-color: red;
 }
 
 .quantity{
   flex: 1;
-  background-color: green;
 }
 
 .reduce{
   flex: 1 ;
-  background-color: yellow;
 }
 
 .price {
   flex: 3;
-  background-color: aqua;
   align-items: center;
-}
-
-.total{
-  background-color: cornflowerblue;
 }
 
 .product-list{
   display: flex;
+}
+
+.checkout {
+  display : flex;
+  flex-direction: row;
+}
+
+.kosong {
+  flex: 1;
+}
+
+.checkout-text {
+  flex: 1;
+  
 }
