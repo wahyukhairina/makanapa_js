@@ -13,6 +13,7 @@ import foto from "../image/header.png";
 import food from "../image/food.jpg";
 import { connect } from "react-redux";
 import { getProducts } from '../components/redux/actions/product'
+import ProductItem from './productitem'
 
 class Home extends Component {
 
@@ -21,7 +22,12 @@ class Home extends Component {
   }
   render() {
     const { products } = this.props
-    console.log(this.props.products, 'props')
+    const ItemProducts = products.map(products => (
+      <ProductItem 
+      products = { products}
+      key = { products.id}
+      />
+    ))
     return (
       <>
         <div className="container-main">
@@ -121,43 +127,9 @@ class Home extends Component {
               </div>
               <div className="product-list">
                 <div className='row'>
-                  <div className='col-md-4'>
-                  <div class="card card-food">
-                  <img class="card-img-top" src={food} alt="Food" />
-                  <div class="card-body">
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                  </div>
-                
+                  {ItemProducts}
                 </div>
-                  </div>
-                  <div className='col-md-4'>
-                  <div class="card card-food">
-                  <img class="card-img-top" src={food} alt="Food" />
-                  <div class="card-body">
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                  </div>
-                
-                </div>
-                  </div>
-                  <div className='col-md-4'>
-                  <div class="card card-food">
-                  <img class="card-img-top" src={food} alt="Food" />
-                  <div class="card-body">
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                  </div>
-                
-                </div>
-                  </div>
-                </div>
+              
               
               
               </div>
