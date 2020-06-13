@@ -1,8 +1,23 @@
-div, .btn {
-  margin: 0;
-  padding: 0;
+body{
+  font-family: 'Poppins', sans-serif;;
 }
 
+a:hover {
+  color: red;
+}
+
+.title {
+  display: flex;
+  margin-left: 2%;
+  font-weight: bold;
+  font-size: large;
+}
+
+.title-mini {
+  display: flex;
+  font-weight: bold;
+  font-size: large;
+}
 .container-main{
   display: flex;
   flex-direction: column;
@@ -17,30 +32,9 @@ div, .btn {
   width: 80%;
 }
 
-.list{
-max-width: 1000px;
-}
-.menu-item {
-  padding: 0 40px;
-  margin: 5px 10px;
-  user-select: none;
-  cursor: pointer;
-  border: none;
-}
-.menu-item-wrapper.active {
-  border: 1px blue solid;
-}
-.menu-item.active {
-  border: 1px green solid;
-}
- 
-.scroll-menu-arrow {
-  padding: 20px;
-  cursor: pointer;
-}
+
 .image-header {
-  width: 95%;
-  height: 70%;
+  width: 70%;
   border-radius: 10px;
 }
 
@@ -65,12 +59,22 @@ max-width: 1000px;
 }
 
 .item-category{
-  max-width: 5%;
+  max-width: 7%;
   height: 70px;
   display: flex;
   flex-direction: column;
   align-self: center;
   justify-content: center;
+  border: none;
+  background-color: white;
+}
+
+button.item-category:focus {
+  border: 1px solid red !important;
+  background-color: yellow;
+}
+button.item-category:active{
+  border: 1px solid red !important;
 }
 
 .navbar {
@@ -78,6 +82,8 @@ max-width: 1000px;
 }
 .container-content{
   display: flex;
+  flex-direction: row;
+
 }
 .container-left{
 flex: 3;
@@ -100,6 +106,7 @@ flex: 3;
 flex: 1;
 display: flex;
 flex-direction: column;
+margin-left: 2%;
 }
 
 
@@ -112,24 +119,57 @@ flex-direction: column;
 .myorder{
   align-self: start;
 }
+
 .card-address{
   max-width: 100%;
 }
 
+.card-image{
+  max-width: 95%;
+}
+
+.card-view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 200%;
+}
+
+.cart{
+  display: flex;
+  flex-direction: column;
+}
 
 .container-cart {
   display: flex;
   flex-direction: row;
 }
 
+.input-address{
+  max-width: 50%;
+}
+
 .cart-item {
-  flex: 3;
-  display: flex;
-  justify-content: center;
+ max-width: 100%;
+ display: flex;
+ flex-direction: column;
 }
 
 .cart-image{
-  max-width: 80%;;
+  max-width: 70%;;
   border-radius: 5%;
 }
 
@@ -137,6 +177,95 @@ flex-direction: column;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.items-detail{
+  display: flex;
+  flex-direction: column;
+}
+
+.items-name{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.reduce{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 100%;
+  justify-content: center;
+
+}
+
+.qty{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 100%;
+  justify-content: center;
+}
+
+.add{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 100%;
+  justify-content: center;
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+  font-style: italic ;
+}
+
+.image-cart {
+  max-width: 90%;
+}
+
+.items{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: "3px solid #efefef";
+  
+  margin-top: 2%;
+}
+.items-image{
+  flex: 2;
+}
+
+.items-detail{
+  flex: 3;
+}
+
+.items-remove{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 100%;
+  justify-content: center;
+}
+
+button.remove{
+  border: none;
+  background-color: transparent;
+}
+
+.cart-row{
+  margin-top: 10%;
 }
 
 .total-price {
@@ -151,18 +280,6 @@ flex-direction: column;
 .amount{
   display: flex;
   flex-direction: row;
-}
-
-.add{
-  flex: 1;
-}
-
-.quantity{
-  flex: 1;
-}
-
-.reduce{
-  flex: 1 ;
 }
 
 .price {

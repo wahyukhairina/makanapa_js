@@ -35,13 +35,15 @@ const ProductItem = ({
     return (
         <div className='col-md-4' key='products.id'>
         <div class="card card-food">
-        <img class="card-img-top" src={products.image} onClick={onAddCart} alt="Food" />
+        <div className='card-view'>
+        <img class="card-image card-img-top" src={products.image} onClick={onAddCart} alt="Food" />
+        </div>
         <div class="card-body">
           <div className='card-title'>{products.name}</div>
           <div>{products.price}</div>
         </div>
+        </div>
       
-      </div>
         </div>
     )
 }

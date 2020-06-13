@@ -10,7 +10,6 @@ import { IoIosIceCream, IoIosSearch } from "react-icons/io";
 import { AiOutlineUser, AiOutlineShoppingCart } from "react-icons/ai";
 import "../App.css";
 import foto from "../image/header.png";
-import food from "../image/food.jpg";
 import { connect } from "react-redux";
 import { getProducts } from "../components/redux/actions/product";
 import ProductItem from "./productitem";
@@ -18,7 +17,11 @@ import CartItem from "./cartitem";
 
 class Home extends Component {
   componentDidMount() {
-    this.props.dispatch(getProducts());
+    this.getProducts();
+  }
+
+  getProducts(data) {
+    this.props.dispatch(getProducts(data));
   }
   render() {
     const { products } = this.props;
@@ -27,11 +30,10 @@ class Home extends Component {
     ));
     return (
       <>
-        <div className="container-main">
+        <div className="container container-main">
           <div className="navbar">
             <GiHamburgerMenu size={"2%"} />
-            <div>makanapa</div>
-            {/* <i className="fa fa-user-circle fa-2x"></i> */}
+            <div className="title">makanapa</div>
             <nav class="navbar navbar-light bg-light">
               <form class="form-inline">
                 <input
@@ -68,94 +70,98 @@ class Home extends Component {
                 <img src={foto} class="image-header" alt="free delivery"></img>
               </div>
               <div className="category">
-                <div>Restaurants</div>
+                <div className="title-mini">Restaurants</div>
                 <div className="list-category">
-                  <div className="item-category">
+                  <button
+                    onClick={() => this.getProducts("")}
+                    className="item-category"
+                  >
                     <div className="item">
                       <FaRegStar size={"70%"} />
                     </div>
                     <div className="item">All</div>
-                  </div>
-                  <div className="item-category">
+                  </button>
+                  <button
+                    onClick={() => this.getProducts("Pasta")}
+                    className="item-category"
+                  >
                     <div className="item">
                       <FaPizzaSlice size={"70%"} />
                     </div>
-                    <div className="item">Pizza</div>
-                  </div>
-                  <div className="item-category">
+                    <div className="item">Pasta</div>
+                  </button>
+                  <button
+                    onClick={() => this.getProducts("Asian")}
+                    className="item-category"
+                  >
                     <div className="item">
                       <GiNoodles size={"70%"} />
                     </div>
                     <div className="item">Asian</div>
-                  </div>
-                  <div className="item-category">
+                  </button>
+                  <button
+                    onClick={() => this.getProducts("Burgers")}
+                    className="item-category"
+                  >
                     <div className="item">
                       <FaHamburger size={"70%"} />
                     </div>
                     <div className="item">Burgers</div>
-                  </div>
-                  <div className="item-category">
+                  </button>
+                  <button
+                    onClick={() => this.getProducts("Barbecue")}
+                    className="item-category"
+                  >
                     <div className="item">
                       <GiSteak size={"70%"} />
                     </div>
                     <div className="item">Barbecue</div>
-                  </div>
-                  <div className="item-category">
+                  </button>
+                  <button
+                    onClick={() => this.getProducts("Desserts")}
+                    className="item-category"
+                  >
                     <div className="item">
                       <IoIosIceCream size={"80%"} />
                     </div>
                     <div className="item">Desserts</div>
-                  </div>
+                  </button>
 
-                  <div className="item-category">
+                  <button
+                    onClick={() => this.getProducts("Thai")}
+                    className="item-category"
+                  >
                     <div className="item">
                       <GiPineapple size={"75%"} />
                     </div>
                     <div className="item">Thai</div>
-                  </div>
+                  </button>
 
-                  <div className="item-category">
+                  <button
+                    onClick={() => this.getProducts("Sushi")}
+                    className="item-category"
+                  >
                     <div className="item">
                       <FaFish size={"70%"} />
                     </div>
                     <div className="item">Sushi</div>
-                  </div>
+                  </button>
                 </div>
               </div>
               <div className="product-list">
-                <div className="row">{ItemProducts}</div>
+                {products.length !== 0 ? (
+                  <div className="row">{ItemProducts}</div>
+                ) : (
+                  <div className="coming-soon">The Food is Coming Soon</div>
+                )}
               </div>
             </div>
             <div className="container-right">
-              <div className="address">
-                <div className="myorder">My Order</div>
-                <div class="card card-address">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bu lk of the card's content.
-                    </p>
-                  </div>
-                </div>
+              <div className="cart title-mini">
+                <div>Cart</div>
               </div>
-              <div className="cart">
-                Cart
-               <CartItem />
-              </div>
-              <div className="total">
-                <div className="total-price">
-                  <div className="total-text">Total</div>
-                  <div className="price-tag">$25.3</div>
-                </div>
-                <div className="container-checkout">
-                  <div className="checkout">
-                    <div className="kosong"></div>
-                    <div className="checkout-text"> Checkout </div>
-                  </div>
-                </div>
-              </div>
+
+              <CartItem />
             </div>
           </div>
         </div>
