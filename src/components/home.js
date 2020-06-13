@@ -12,22 +12,19 @@ import "../App.css";
 import foto from "../image/header.png";
 import food from "../image/food.jpg";
 import { connect } from "react-redux";
-import { getProducts } from '../components/redux/actions/product'
-import ProductItem from './productitem'
+import { getProducts } from "../components/redux/actions/product";
+import ProductItem from "./productitem";
+import CartItem from "./cartitem";
 
 class Home extends Component {
-
-  componentDidMount(){
-    this.props.dispatch(getProducts())
+  componentDidMount() {
+    this.props.dispatch(getProducts());
   }
   render() {
-    const { products } = this.props
-    const ItemProducts = products.map(products => (
-      <ProductItem 
-      products = { products}
-      key = { products.id}
-      />
-    ))
+    const { products } = this.props;
+    const ItemProducts = products.map((products) => (
+      <ProductItem products={products} key={products.id} />
+    ));
     return (
       <>
         <div className="container-main">
@@ -52,7 +49,7 @@ class Home extends Component {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-              <AiOutlineUser size={"100%"} />
+                <AiOutlineUser size={"100%"} />
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#">
@@ -126,12 +123,7 @@ class Home extends Component {
                 </div>
               </div>
               <div className="product-list">
-                <div className='row'>
-                  {ItemProducts}
-                </div>
-              
-              
-              
+                <div className="row">{ItemProducts}</div>
               </div>
             </div>
             <div className="container-right">
@@ -150,21 +142,7 @@ class Home extends Component {
               </div>
               <div className="cart">
                 Cart
-                <div className="container-cart">
-                  <div className="cart-item">
-                    <img className="cart-image" src={food} alt="cart item" />
-                  </div>
-                  <div className="cart-detail">
-                    <div className="item-name"> Strawberry Yougurt</div>
-                    <div className="amount">
-                      <div className="add"> + </div>
-                      <div className="quantity"> 1 </div>
-                      <div className="reduce"> - </div>
-                    </div>
-                  </div>
-
-                  <div className="price"> price </div>
-                </div>
+               <CartItem />
               </div>
               <div className="total">
                 <div className="total-price">
@@ -185,9 +163,9 @@ class Home extends Component {
     );
   }
 }
-const mapStateToProps = state => {
-  return{
-    products: state.products.products
-  }
-}
+const mapStateToProps = (state) => {
+  return {
+    products: state.products.products,
+  };
+};
 export default connect(mapStateToProps)(Home);

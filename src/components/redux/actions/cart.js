@@ -18,6 +18,12 @@ export const removeItem = (id) => {
         payload: id
     }
 }
+export const reduceQty = (id) => {
+    return {
+      type: 'REDUCE_QTY',
+      payload: id
+    }
+  }
 
 export const removeCart = (cart) => {
     return {
