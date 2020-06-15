@@ -32,6 +32,21 @@ const ProductItem = ({
         }
     }
 
+  const convertToRupiah = (angka) => {
+      var rupiah = "";
+      var angkarev = angka.toString().split("").reverse().join("");
+      for (var i = 0; i < angkarev.length; i++)
+        if (i % 3 == 0) rupiah += angkarev.substr(i, 3) + ".";
+      return (
+        "Rp. " +
+        rupiah
+          .split("", rupiah.length - 1)
+          .reverse()
+          .join("") +
+        ",-"
+      );
+    }
+
     return (
         <div className='col-md-4' key='products.id'>
         <div class="card card-food">
@@ -40,7 +55,7 @@ const ProductItem = ({
         </div>
         <div class="card-body">
           <div className='card-title'>{products.name}</div>
-          <div>{products.price}</div>
+          <div>{convertToRupiah (products.price)}</div>
         </div>
         </div>
       

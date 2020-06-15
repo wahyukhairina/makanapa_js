@@ -305,3 +305,13 @@ button.remove{
   flex: 1;
   
 }
+
+.checkout{
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-button {
+  justify-content: flex-end;
+  align-items: flex-end;
+}

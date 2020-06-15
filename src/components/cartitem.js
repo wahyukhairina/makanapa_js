@@ -84,8 +84,13 @@ class CartItem extends Component {
                 </div>
               </div>
             ))}
-            <div style={{ paddingTop: "10px" }}>
+            <div className='checkout'>
+            <div className='total' style={{ paddingTop: "10px" }}>
               <div>Total : {this.convertToRupiah(initialTotal)}</div>
+            </div>
+            <div className='checkout-button'>
+                    <button> Checkout</button>
+            </div>
             </div>
           </div>
         ) : (
